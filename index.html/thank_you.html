@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Gods Little Ones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        .donor-list {
+            margin-top: 20px;
+            text-align: left;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .donor-list h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Thank You for Your Donation!</h1>
+    <p>Your contribution is helping us make a difference.</p>
+    <p><strong>Total Donations: <span id="total-donations"></span></strong></p>
+
+    <div class="donor-list">
+        <h2>Donors</h2>
+        <ul id="donor-list">
+            <!-- Donor names will be added here dynamically -->
+        </ul>
+    </div>
+
+    <a href="index.html" style="color: white; text-decoration: underline; display: block; margin-top: 20px;">Return to Home</a>
+
+    <script>
+        // Simulating dynamic data (you can replace this with data fetched from the backend)
+        const donors = ["John Doe", "Jane Smith", "Alex Johnson", "Emily Davis"];
+        const donorList = document.getElementById("donor-list");
+        const totalDonations = document.getElementById("total-donations");
+
+        // Add total donors count
+        totalDonations.textContent = donors.length;
+
+        // Display donor names
+        donors.forEach(donor => {
+            const listItem = document.createElement("li");
+            listItem.textContent = donor;
+            donorList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
+
